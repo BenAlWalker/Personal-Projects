@@ -13,7 +13,6 @@ forward = p
 backwards = 1-p
 # same = (p*q)+((1-q)*(1-p))
 
-# test edit
 time = input("How many time steps to run? ")
 time = int(time)
 totaltime = time
