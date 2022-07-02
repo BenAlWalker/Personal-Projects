@@ -11,13 +11,20 @@ expected = 2 ** (h_in_row + 1) - 2
 
 total_count = 0
 
+'''
+This method runs one trial, that is it will calculate how 
+many coin flips required until there are X heads in a row.
+:param head_in_row: How many heads in a row the trial will test for
+:return Returns a new row in the df with the amount of flips required, trials needed, and new average
+'''
 
-def trial(h_in_row):
+
+def trial(head_in_row):
     counter = 0
     heads = 0
     trial.total_flips = 0
     trial.positions = []
-    while counter < int(h_in_row):
+    while counter < int(head_in_row):
         prob = random()
         if 0 < prob <= .5:  # flipped a heads
             counter += 1  # increase total heads by 1
@@ -28,11 +35,12 @@ def trial(h_in_row):
             trial.total_flips += 1
             trial.positions.append(heads)
             heads = 0
-        if counter == int(h_in_row):
+        if counter == int(head_in_row):
             trial.positions.append(counter)
             df.loc[len(df.index)] = [trial.total_flips, len(trial.positions), df["Total Flips"].mean()]
 
 
+# Upload all trials into the dataframe
 for i in range(0, tests):
     trial(h_in_row)
 
