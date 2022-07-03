@@ -2,6 +2,8 @@ from random import random
 import numpy as np
 from matplotlib import pyplot as plt
 import pandas as pd
+import plotly.express as px
+import plotly.graph_objects as go
 
 df = pd.DataFrame(columns=["Total Flips", "Total Trials", "Average Flips"])
 
@@ -57,3 +59,17 @@ plt.plot(x_trial, df["Average Flips"], color="r", linewidth=1, label="Average Fl
 plt.margins(x=0)
 plt.legend()
 plt.show()
+
+
+fig = px.scatter(df, x=df.index, y="Total Flips", title="Expected Coin Flips until "
+                                                        + str(h_in_row) + " Heads in a Row",
+                 labels={"index": "Trial", "Total Flips": "Flips per Trial"}, animation_frame=df.index,
+                 animation_group="Total Flips")
+
+
+fig.update_traces(marker_size=5)
+fig.update_yaxes(automargin=True)
+fig.add_trace(go.Scatter(x=df.index, y=df["Average Flips"], name="Moving Average"))
+fig.add_hline(y=expected)
+fig.show()
+
