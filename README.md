@@ -12,3 +12,9 @@ One trial will run until that many heads in a row is recorded. The Total Flips p
 3. Expected value of total flips until X heads in a row are seen (2^X - 2 flips)
 
 This program verifies the Law of Large numbers, as the amount of trials is increased, the closer the moving average becomes to the expected value of flips required.
+
+I also included a plotly graph since I wanted to gain some basic experience with using Plotly.
+
+----------------
+
+Regression.py is a linear regression graphing the Max HR of patients based on age. 
