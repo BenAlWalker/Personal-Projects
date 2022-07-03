@@ -4,7 +4,7 @@ from matplotlib import pyplot as plt
 
 customers = 0
 
-p = input("What is probability of forward? ")
+p = input("What is probability to move forward? ")
 p = float(p)
 # q = input("What is the probability of the first customer leaving? ")
 # q = float(q)
