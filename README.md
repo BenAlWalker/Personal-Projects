@@ -18,3 +18,6 @@ I also included a plotly graph since I wanted to gain some basic experience with
 ----------------
 
 Regression.py is a linear regression graphing the Max HR of patients based on age. 
+
+------------
+randomwalk.py is a simple random walk over the integers, runs for a specified amount of time.
